@@ -1,11 +1,15 @@
 window.ConvertsNumerals = function() {
+
+  var numMap = {
+    "I":   1,
+    "II":  2,
+    "III": 3,
+    "IV":  4,
+    "X":  10,
+  }
+
+
   this.fromRoman = function(input) {
-    if(input === "I") {
-      return 1;
-    } else if(input === "II") {
-      return 2;
-    } else {
-      return 3;
-    }
+    return numMap[input]
   }
 };
