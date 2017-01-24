@@ -10,3 +10,4 @@ describe "RomanNumeralThing", =>
   Then  -> @subject.fromRoman("II")  == 2
   Then  -> @subject.fromRoman("III") == 3
   Then  -> @subject.fromRoman("IV")  == 4
+  Then  -> @subject.fromRoman("X")  == 10
