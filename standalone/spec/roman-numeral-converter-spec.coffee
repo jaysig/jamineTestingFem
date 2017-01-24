@@ -6,10 +6,6 @@
 describe "RomanNumeralThing", =>
   Given -> @subject = new ConvertsNumerals()
 
-  describe "it converts I to 1", ->
-    When  -> @result = @subject.fromRoman("I")
-    Then  -> @result == 1
-
-  describe "it converts I to 1", ->
-    When  -> @result = @subject.fromRoman("II")
-    Then  -> @result == 2
+  Then  -> @subject.fromRoman("I")   == 1
+  Then  -> @subject.fromRoman("II")  == 2
+  Then  -> @subject.fromRoman("III") == 3
