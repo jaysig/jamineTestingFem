@@ -1,5 +1,5 @@
 describe "getsProblem", ->
-  Given -> @subject = requireSubject 'lib/gets-problem'
+  Given -> @subject = requireSubject 'lib/gets-problem',
     './generates-problem': @generatesProblem = jasmine.createSpy("generatesProblem")
     './saves-problem': @savesProblem = jasmine.createSpy("savesProblem")
     './presents-problem': @presentsProblem = jasmine.createSpy("presentsProblem")

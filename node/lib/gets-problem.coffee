@@ -1,6 +1,6 @@
-generatesProblem = require '.generatesProblem'
+generatesProblem = require './generates-problem'
 savesProblem = require './saves-problem'
 presentsProblem = require './presents-problem'
 
-module.export = ->
+module.exports = ->
   presentsProblem(savesProblem(generatesProblem()))
