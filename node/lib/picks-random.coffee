@@ -1,2 +1,4 @@
+_ = require('lodash')
+
 module.exports = (pickFrom) ->
-  pickFrom?[0]
+  _(pickFrom).shuffle()?[0]
