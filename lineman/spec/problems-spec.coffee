@@ -8,6 +8,14 @@ describe 'rendering the UI', ->
   describe 'fetching a new problem', ->
     Given -> @$button = @$container.affix('button.new-problem')
     Given -> spyOn($, 'get')
+    Given -> @captor = jasmine.captor() #captures the value
     When -> @$button.trigger('click')
     # When runs last
-    Then  -> expect($.get).toHaveBeenCalledWith('/problem', jasmine.any(Function))
+    And  -> expect($.get).toHaveBeenCalledWith('/problem', @captor.capture())
+
+    describe 'rendering the new problem', ->
+      Given -> @$latestProblem = @$container.affix('.latest-problem')
+      Given -> @problem = description: '1 + 1'
+      #all problems have a description
+      When -> @captor.value(@problem)
+      Then -> @$latestProblem.text() == "1 + 1"
