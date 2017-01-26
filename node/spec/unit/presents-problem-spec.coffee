@@ -1,5 +1,7 @@
+_ = require('lodash')
+
 describe 'presentsProblem', ->
-  Given -> @subject = requireSubject('lib/presents-subject')
+  Given -> @subject = requireSubject('lib/presents-problem')
 
   context 'a typical problem', ->
     Given -> @problem =
@@ -8,4 +10,5 @@ describe 'presentsProblem', ->
         left: 39
         right: 8
     When -> @result = @subject(@problem)
-    Then -> @result.description == '39 - 8'
+    Then -> expect(@result).toEqual _({}).extend @problem,
+      description: '39 - 8'
