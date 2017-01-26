@@ -9,4 +9,4 @@ describe 'savesProblem', ->
 
   describe '.retrieve', ->
     When -> @retrieved = @subject.retrieve(@result.id)
-    Then -> @retrieved.fake == 'problem stuff' 
+    Then -> expect(@result).toEqual(@retrieved)
