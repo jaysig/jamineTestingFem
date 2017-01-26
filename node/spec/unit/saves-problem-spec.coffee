@@ -6,3 +6,7 @@ describe 'savesProblem', ->
   When  -> @result = @subject(@problem)
   Then  -> _(@result.id).isNumber()
   And   -> @result.fake == 'problem stuff'
+
+  describe '.retrieve', ->
+    When -> @retrieved = @subject.retrieve(@result.id)
+    Then -> @retrieved.fake == 'problem stuff' 
